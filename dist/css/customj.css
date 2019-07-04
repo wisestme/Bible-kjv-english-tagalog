@@ -1,0 +1,11 @@
+tr.em {
+    font-weight: normal;
+    background-color: #f1f1f1;
+
+}
+
+span.verseNo,
+.sup {
+    font-size: 75%;
+    vertical-align: super;
+}
