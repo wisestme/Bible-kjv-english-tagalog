@@ -187,11 +187,11 @@
 
     $('#search_btn').click(function () {
 
-      var book_item = $('#books option:selected').val();
+      var book_item = $('#books option:selected').val().toLowerCase();;
       var chapters_item = $('#chapters option:selected').val();
       var verse_item = '3';
 
-      window.location.href = '' + book_item + '/' + book_item + '-' + chapters_item + '.html#verse-' + verse_item +
+      window.location.href = '' + book_item + '/' + book_item + '-chapter-' + chapters_item + '.html#verse-' + verse_item +
         '';
     });
 
