@@ -24,3 +24,16 @@ eval(function (p, a, c, k, e, d) {
     10, 77,
     '||var||function|i|||if|hash|rowId|index|currentRow|window|start|end|affectedIds|highlightedIds|lastRow|lastVerse|hasValidDash|verse|tr|length|this|exists|fn|return|em|windowTop|jQuery|highlightHash|moreRowIds|rowIds|body|attr|self|id|substring|elementTop|scrollToView|isValidHash|indexOf|for|split|parseInt|isScrolledIntoView|push|elementBottom|highlightedRows|log|obj|location|scrollTop|data|offset|else|windowBottom|addClass|height|top|hashchange|removeClass|tbody|chapter|bind|last|while|html|animate|1000|console|a|ready|trim|document|prev'
     .split('|'), 0, {}))
+
+
+    
+
+    $(document).ready(function () {
+
+        $('span.verse').addClass('d-block p-3');
+
+        
+       
+            
+    });
+
