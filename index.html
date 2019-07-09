@@ -59,12 +59,12 @@
               <option>Joshua</option>
               <option>Judges</option>
               <option>Ruth</option>
-              <option>1 Samuel</option>
-              <option>2 Samuel</option>
-              <option>1 Kings</option>
-              <option>2 Kings</option>
-              <option>1 Chronicles</option>
-              <option>2 Chronicles</option>
+              <option>1st-Samuel</option>
+              <option>2nd-Samuel</option>
+              <option>1st-Kings</option>
+              <option>2nd-Kings</option>
+              <option>1st-Chronicles</option>
+              <option>2nd-Chronicles</option>
               <option>Ezra</option>
               <option>Nehemiah</option>
               <option>Esther</option>
@@ -97,25 +97,25 @@
               <option>John</option>
               <option>Acts</option>
               <option>Romans</option>
-              <option>1 Corinthians</option>
-              <option>2 Corinthians</option>
+              <option>1st-Corinthians</option>
+              <option>2nd-Corinthians</option>
               <option>Galatians</option>
               <option>Ephesians</option>
               <option>Philippians</option>
               <option>Colossians</option>
-              <option>1 Thessalonians</option>
-              <option>2 Thessalonians</option>
-              <option>1 Timothy</option>
-              <option>2 Timothy</option>
+              <option>1st-Thessalonians</option>
+              <option>2nd-Thessalonians</option>
+              <option>1st-Timothy</option>
+              <option>2nd-Timothy</option>
               <option>Titus</option>
               <option>Philemon</option>
               <option>Hebrews</option>
               <option>James</option>
-              <option>1 Peter</option>
-              <option>2 Peter</option>
-              <option>1 John</option>
-              <option>2 John</option>
-              <option>3 John</option>
+              <option>1st-Peter</option>
+              <option>2nd-Peter</option>
+              <option>1st-John</option>
+              <option>2nd-John</option>
+              <option>3rd-John</option>
               <option>Jude</option>
               <option>Revelation</option>
             </select>
@@ -206,12 +206,12 @@
       "Joshua": "24",
       "Judges": "21",
       "Ruth": "4",
-      "1st Samuel": "31",
-      "2nd Samuel": "24",
-      "1st Kings": "22",
-      "2nd Kings": "25",
-      "1st Chronicles": "29",
-      "2 Chronicles": "36",
+      "1st-Samuel": "31",
+      "2nd-Samuel": "24",
+      "1st-Kings": "22",
+      "2nd-Kings": "25",
+      "1st-Chronicles": "29",
+      "2-Chronicles": "36",
       "Ezra": "10",
       "Nehemiah": "13",
       "Esther": "10",
@@ -243,25 +243,25 @@
       "John": "21",
       "Acts": "28",
       "Romans": "16",
-      "1st Corinthians": "16",
-      "2nd Corinthians": "13",
+      "1st-Corinthians": "16",
+      "2nd-Corinthians": "13",
       "Galatians": "6",
       "Ephesians": "6",
       "Philippians": "4",
       "Colossians": "4",
-      "1st Thessalonians": "5",
-      "2nd Thessalonians": "3",
-      "1st Timothy": "6",
-      "2nd Timothy": "4",
+      "1st-Thessalonians": "5",
+      "2nd-Thessalonians": "3",
+      "1st-Timothy": "6",
+      "2nd-Timothy": "4",
       "Titus": "3",
       "Philemon": "1",
       "Hebrews": "13",
       "James": "5",
-      "1st Peter": "5",
-      "2nd Peter": "3",
-      "1st John": "5",
-      "2nd John": "1",
-      "3rd John": "1",
+      "1st-Peter": "5",
+      "2nd-Peter": "3",
+      "1st-John": "5",
+      "2nd-John": "1",
+      "3rd-John": "1",
       "Jude": "1",
       "Revelation": "22"
 
@@ -285,34 +285,8 @@
         triggerChange(chapters);
       });
     }
-
-    if (chapters.addEventListener)
-      chapters.addEventListener('change', function (e) {
-        getVerses(this.value);
-      });
-
-    else if (books.attachEvent) {
-      books.attachEvent('onchange', function (e) {
-        getVerses(this.value);
-      });
-    }
-
+   
     triggerChange(books);
-
-    function getVerses() {
-      var xmlhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-      xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-          if (xmlhttp.status == 200) {
-            fillSelect(verses, xmlhttp.responseText);
-          } else if (xmlhttp.status == 400) {} else {}
-        }
-      }
-      xmlhttp.open("POST", "/ajax.php", true);
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send('callFunc=getMaxVerseForChapter&book=' + books.options[books.selectedIndex].value + '&chapter=' +
-        chapters.options[chapters.selectedIndex].value);
-    }
 
     function fillSelect(select, totalNo) {
       select.innerHTML = '';
